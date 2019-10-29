@@ -120,6 +120,58 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &491590810 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1818486636018010, guid: 211de2351892a33418710d565d74d05f,
+    type: 3}
+  m_PrefabInstance: {fileID: 853052768}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &491590811 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4236085627205302, guid: 211de2351892a33418710d565d74d05f,
+    type: 3}
+  m_PrefabInstance: {fileID: 853052768}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &491590812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491590810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bd7de10733b09948a989d54313b3526, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  halfLength: 100
+  otherBlock: {fileID: 691006995}
+--- !u!1 &691006994 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1818486636018010, guid: 211de2351892a33418710d565d74d05f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1193563902}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &691006995 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4236085627205302, guid: 211de2351892a33418710d565d74d05f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1193563902}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &691006996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691006994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bd7de10733b09948a989d54313b3526, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  halfLength: 100
+  otherBlock: {fileID: 491590811}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,8 +360,8 @@ Camera:
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.93333334, g: 0.8039216, b: 0.5764706, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
