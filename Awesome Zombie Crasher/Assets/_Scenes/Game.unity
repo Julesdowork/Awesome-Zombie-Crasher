@@ -283,6 +283,7 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -323,7 +324,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 40
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -355,6 +356,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 22, y: 0, z: 0}
+--- !u!114 &963194229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de3cc46a38d206d4bbad5b186f45b6c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 6.3
+  height: 3.5
+  heightDamping: 3.25
+  rotationDamping: 0.27
+  target: {fileID: 1242276929}
 --- !u!1001 &1193563902
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -416,34 +434,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 211de2351892a33418710d565d74d05f, type: 3}
---- !u!1 &1242276926 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1215587938254912839, guid: 807e1602d460e284391d5e968f9d8166,
+--- !u!4 &1242276929 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1215587938254912824, guid: 807e1602d460e284391d5e968f9d8166,
     type: 3}
   m_PrefabInstance: {fileID: 1215587939495795065}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1242276930
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1242276926}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 512e7b38e2d58be47a963127b417c28d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: {x: 0, y: 0, z: 0}
-  xSpeed: 8
-  zSpeed: 15
-  accelerateForce: 15
-  decelerationForce: -10
-  lowSoundPitch: 0
-  normalSoundPitch: 0
-  highSoundPitch: 0
-  engineOnSound: {fileID: 0}
-  engineOffSound: {fileID: 0}
 --- !u!1001 &1215587939495795065
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -469,7 +465,7 @@ PrefabInstance:
     - target: {fileID: 1215587938254912824, guid: 807e1602d460e284391d5e968f9d8166,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 2.91
       objectReference: {fileID: 0}
     - target: {fileID: 1215587938254912824, guid: 807e1602d460e284391d5e968f9d8166,
         type: 3}

@@ -16,6 +16,7 @@ public class PlayerController : BaseController
     void Update()
     {
         ControlMovementWithKeyboard();
+        ChangeRotation();
     }
 
     void FixedUpdate()
@@ -60,7 +61,26 @@ public class PlayerController : BaseController
         }
         if (Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.S))
         {
-            MoveSlow();
+            MoveNormal();
+        }
+    }
+
+    void ChangeRotation()
+    {
+        if (speed.x > 0)
+        {
+            transform.rotation = Quaternion.Slerp(transform.rotation,
+                Quaternion.Euler(0f, maxAngle, 0f), Time.deltaTime * rotationSpeed);
+        }
+        else if (speed.x < 0)
+        {
+            transform.rotation = Quaternion.Slerp(transform.rotation,
+                Quaternion.Euler(0f, -maxAngle, 0f), Time.deltaTime * rotationSpeed);
+        }
+        else
+        {
+            transform.rotation = Quaternion.Slerp(transform.rotation,
+                Quaternion.Euler(0f, 0f, 0f), Time.deltaTime * rotationSpeed);
         }
     }
 }
