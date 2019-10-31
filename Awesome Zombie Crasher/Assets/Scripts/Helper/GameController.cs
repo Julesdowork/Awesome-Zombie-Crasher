@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -12,8 +14,14 @@ public class GameController : MonoBehaviour
     public float minObstacleDelay = 10f, maxObstacleDelay = 40f;
 
     private float halfGroundSize;
+    private int zombieKillCount;
 
     BaseController playerController;
+    Text scoreText;
+    [SerializeField] GameObject pausePanel;
+    [SerializeField] GameObject gameOverPanel;
+    [SerializeField] Text finalScore;
+
 
     void Awake()
     {
@@ -27,6 +35,8 @@ public class GameController : MonoBehaviour
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<BaseController>();
 
         StartCoroutine("GenerateObstacles");
+
+        scoreText = GameObject.Find("Score Text").GetComponent<Text>();
     }
 
     private void MakeInstance()
@@ -110,5 +120,42 @@ public class GameController : MonoBehaviour
             Instantiate(zombiePrefabs[Random.Range(0, zombiePrefabs.Length)],
                 pos + shift * i, Quaternion.identity);
         }
+    }
+
+    public void IncreaseScore()
+    {
+        zombieKillCount++;
+        scoreText.text = zombieKillCount.ToString();
+    }
+
+    public void PauseGame()
+    {
+        pausePanel.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    public void ResumeGame()
+    {
+        pausePanel.SetActive(false);
+        Time.timeScale = 1f;
+    }
+
+    public void ExitGame()
+    {
+        Time.timeScale = 1f;
+        //SceneManager.LoadScene("Main Menu");
+    }
+
+    public void GameOver()
+    {
+        Time.timeScale = 0;
+        gameOverPanel.SetActive(true);
+        finalScore.text = "Killed: " + zombieKillCount;
+    }
+
+    public void Restart()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Game");
     }
 }

@@ -12,7 +12,7 @@ public class ExplosiveObstacle : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-            // DEAL DAMAGE
+            collision.gameObject.GetComponent<PlayerHealth>().ApplyDamage(damage);
             gameObject.SetActive(false);
         }
         if (collision.gameObject.CompareTag("Bullet"))

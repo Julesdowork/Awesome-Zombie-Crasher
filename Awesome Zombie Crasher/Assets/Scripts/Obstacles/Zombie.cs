@@ -39,7 +39,7 @@ public class Zombie : MonoBehaviour
         {
             Instantiate(bloodFXPrefab, transform.position, Quaternion.identity);
             Invoke("Deactivate", 3f);
-            // INCREASE SCORE
+            GameController.instance.IncreaseScore();
             Die();
         }
     }
