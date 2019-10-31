@@ -142,8 +142,9 @@ public class GameController : MonoBehaviour
 
     public void ExitGame()
     {
+        Debug.Log("Exiting game");
         Time.timeScale = 1f;
-        //SceneManager.LoadScene("Main Menu");
+        SceneManager.LoadScene("Main Menu");
     }
 
     public void GameOver()
